@@ -48,7 +48,7 @@ dataset = load_dataset(dataset_name)
 
 # Select only a few examples for faster training / testing
 dataset['train'] = dataset['train'].select(range(500))
-dataset['test'] = dataset['test'].select(range(100))
+dataset['test'] = dataset['test'].select(range(200))
 dataset['unsupervised'] = dataset['unsupervised'].select(range(1))
 
 # Tokenize datasets

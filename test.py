@@ -21,16 +21,14 @@ def tokenize_fn(examples):
     return tokenizer(examples['text'], truncation=True, padding='max_length', max_length=512)
 
 # Load datasets
-print("Loading dataset...")
 dataset = load_dataset(dataset_name)
 
 # Select only a few examples for faster testing
 dataset['train'] = dataset['train'].select(range(1))
-dataset['test'] = dataset['test'].select(range(100))
+dataset['test'] = dataset['test'].select(range(200))
 dataset['unsupervised'] = dataset['unsupervised'].select(range(1))
 
 # Tokenize datasets
-print("Tokenizing datasets...")
 tokenized_datasets = dataset.map(tokenize_fn, batched=True)
 tokenized_datasets.set_format(type='torch', columns=['input_ids', 'attention_mask', 'label'])
 tokenized_datasets = tokenized_datasets.rename_column('label', 'labels')
