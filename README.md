@@ -1,6 +1,6 @@
 # peft-issue-2171
 
-See issue [#2171](huggingface/peft issue #2171 - non-deterministic, erratic results from loading LoRA adapters) for more info.
+See issue [huggingface/peft#2171](https://github.com/huggingface/peft/issues/2171) for more info.
 
 To replicate the bug, run the following (e.g. in a venv):
 
@@ -16,5 +16,67 @@ python train.py
 
 # Show the results
 cat results.txt
+```
+
+See that the [results](./results.txt) are erratic and inconsistent:
+
+```
+...
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.265}
+{'accuracy': 0.0}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.12}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 0.0}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 1.0}
+{'accuracy': 0.68}
+{'accuracy': 1.0}
 ```
 
